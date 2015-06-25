@@ -1,3 +1,27 @@
-<h2 id="title">Welcome to Ember.js</h2>
+<section class="clear">
+<div class="side-option-bar">
+    <div class="logotitle">WEATHER</div>
+    <button class="current nav" {{action 'loadCurrent'}}>Current</button>
+    <button class="hourly nav" {{action 'loadHours'}}>Today</button>
+    <button class="weekly nav" {{action 'loadWeek'}}>This Week</button>
+</div>
+<div class="show-view">
+  {{current-weather model=model}}
+</div>
+</section>
 
+
+
+
+
+
+
+
+
+
+
+
+{{log model.items}}
+
+{{log model.location}}
 {{outlet}}
