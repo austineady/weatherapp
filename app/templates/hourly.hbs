@@ -1,1 +1,9 @@
-{{hourly-forecast model=model.items.hourly}}
+<div class="side-option-bar">
+    <div class="logotitle">WEATHER</div>
+    {{#link-to 'current'}}<button class="nav">Current</button>{{/link-to}}
+    {{#link-to 'hourly'}}<button class="enabled nav" >Today</button>{{/link-to}}
+    {{#link-to 'weekly'}}<button class="nav">This Week</button>{{/link-to}}
+</div>
+<div class="show-view">
+  {{hourly-forecast model=model.items.hourly current=model.items.currently}}
+</div>

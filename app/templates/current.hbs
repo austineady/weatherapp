@@ -1,1 +1,9 @@
+<div class="side-option-bar">
+    <div class="logotitle">WEATHER</div>
+    {{#link-to 'current'}}<button class="enabled nav">Current</button>{{/link-to}}
+    {{#link-to 'hourly'}}<button class="nav" >Today</button>{{/link-to}}
+    {{#link-to 'weekly'}}<button class="nav">This Week</button>{{/link-to}}
+</div>
+<div class="show-view">
 {{current-weather model=model}}
+</div>

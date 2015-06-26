@@ -1,20 +1,36 @@
 {{log model}}
 
 <div class="hourly-circle">
-  <h1 class="today-text">TODAY</h1>
-  <i class="wi wi-rain"></i>
-  <h1 class="hourly-summary">{{model.summary}}</h1>
+  <i class="wi wi-rain hourly-circle-rain-icon"></i>
+  <h1 class="today-text">{{current.temperature}}<i class="wi wi-degrees hourly-circle-degree"></i></h1>
 </div>
+<h1 class="hourly-summary">{{model.summary}}</h1>
 <section class="upcoming-forecast">
+  <div class="hourly-container-heading">
+    <h3 class="hour-item-summary-header">Conditions</h3>
+    <h3 class="item-temperature-header">Temperature</h3>
+    <h3 class="item-feels-like-header">Feels Like</h3>
+    <h3 class="item-rain-chance-header">Chance of Rain</h3>
+    <h3 class="item-humidity-header">Humidity</h3>
+  </div>
   {{#each upcomingForecasts as |item|}}
     <div class="hourly-container">
-      <h3 class="hour-item-summary">{{item.summary}}</h3>
-      <i class="wi wi-rain"></i>
-      <h3 class="item-temperature"><i class="wi wi-thermometer"></i> {{item.temperature}}</h3>
-      <h3 class="item-feels-like">Feels Like {{item.apparentTemperature}}<i class="wi wi-degrees"></i></h3>
-      <h3 class="item-rain-chance">{{precipProbability}}% Chance of Rain</h3>
-      <h3 class="item-humidity"><i class="wi wi-hot"></i> {{item.humidity}}% Humidity</h3>
-
+      <div class="hourly-conditions-container">
+        <i class="wi wi-rain hourly-rain-icon"></i>
+        <h3 class="hour-item-summary">{{item.summary}}</h3>
+      </div>
+      <div class="hourly-temperature-container">
+        <h3 class="item-temperature"><i class="wi wi-thermometer"></i> {{item.temperature}}<i class="wi wi-degrees"></i></h3>
+      </div>
+      <div class="hourly-feels-like-container">
+        <h3 class="item-feels-like">{{item.apparentTemperature}}<i class="wi wi-degrees"></i></h3>
+      </div>
+      <div class="hourly-rain-chance-container">
+        <h3 class="item-rain-chance">{{item.precipProbability}}%</h3>
+      </div>
+      <div class="hourly-humidity-container">
+        <h3 class="item-humidity"><i class="wi wi-hot"></i> {{item.humidity}}%</h3>
+      </div>
     </div>
   {{/each}}
 </section>

@@ -1,13 +1,6 @@
 <section class="clear">
-<div class="side-option-bar">
-    <div class="logotitle">WEATHER</div>
-    {{#link-to 'current'}}<button class="current nav">Current</button>{{/link-to}}
-    {{#link-to 'hourly'}}<button class="hourly nav">Today</button>{{/link-to}}
-    {{#link-to 'weekly'}}<button class="weekly nav" {{action 'loadWeek'}}>This Week</button>{{/link-to}}
-</div>
-<div class="show-view">
+
   {{outlet}}
-</div>
 </section>
 
 
