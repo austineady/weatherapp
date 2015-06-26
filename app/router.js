@@ -6,6 +6,9 @@ var Router = Ember.Router.extend({
 });
 
 Router.map(function() {
+  this.route('current', { path: '/'});
+  this.route('hourly');
+  this.route('weekly');
 });
 
 export default Router;
