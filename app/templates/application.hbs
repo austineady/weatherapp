@@ -1,12 +1,12 @@
 <section class="clear">
 <div class="side-option-bar">
     <div class="logotitle">WEATHER</div>
-    <button class="current nav" {{action 'loadCurrent'}}>Current</button>
-    <button class="hourly nav" {{action 'loadHours'}}>Today</button>
-    <button class="weekly nav" {{action 'loadWeek'}}>This Week</button>
+    {{#link-to 'current'}}<button class="current nav">Current</button>{{/link-to}}
+    {{#link-to 'hourly'}}<button class="hourly nav">Today</button>{{/link-to}}
+    {{#link-to 'weekly'}}<button class="weekly nav" {{action 'loadWeek'}}>This Week</button>{{/link-to}}
 </div>
 <div class="show-view">
-  {{current-weather model=model}}
+  {{outlet}}
 </div>
 </section>
 
@@ -24,4 +24,3 @@
 {{log model.items}}
 
 {{log model.location}}
-{{outlet}}

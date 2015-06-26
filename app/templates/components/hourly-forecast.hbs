@@ -1,1 +1,20 @@
-{{yield}}
+{{log model}}
+
+<div class="hourly-circle">
+  <h1 class="today-text">TODAY</h1>
+  <i class="wi wi-rain"></i>
+  <h1 class="hourly-summary">{{model.summary}}</h1>
+</div>
+<section class="upcoming-forecast">
+  {{#each upcomingForecasts as |item|}}
+    <div class="hourly-container">
+      <h3 class="hour-item-summary">{{item.summary}}</h3>
+      <i class="wi wi-rain"></i>
+      <h3 class="item-temperature"><i class="wi wi-thermometer"></i> {{item.temperature}}</h3>
+      <h3 class="item-feels-like">Feels Like {{item.apparentTemperature}}<i class="wi wi-degrees"></i></h3>
+      <h3 class="item-rain-chance">{{precipProbability}}% Chance of Rain</h3>
+      <h3 class="item-humidity"><i class="wi wi-hot"></i> {{item.humidity}}% Humidity</h3>
+
+    </div>
+  {{/each}}
+</section>
